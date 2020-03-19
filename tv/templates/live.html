@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+	<meta charset="utf-8" />
+	<title>凤凰卫视</title>
+</head>
+<body>
+<div style="width: 700px;height: 500px;">
+{#    <script type="text/javascript" src="../player/sewise.player.min.js?server=vod&type=m3u8&videourl=http://live-wcloud-cdn.ysp.cctv.cn/tlivecloud-cdn.ysp.cctv.cn/001/2000204603.m3u8&autostart=true&starttime=0&lang=zh_CN&logo=https://i.loli.net/2020/03/09/pkD7zTbvKUGH6gS.png&title=CCTV-13直播&buffer=5&claritybutton=disable&skin=vodFlowPlayer"></script>#}
+    <script type="text/javascript" src={% static 'player/sewise.player.min.js?server=vod&type=m3u8&videourl=http://live-wcloud-cdn.ysp.cctv.cn/tlivecloud-cdn.ysp.cctv.cn/001/2000210103.m3u8&autostart=true&starttime=0&lang=zh_CN&logo=https://i.loli.net/2020/03/09/pkD7zTbvKUGH6gS.png&title=CCTV-13直播&buffer=5&claritybutton=disable&skin=vodFlowPlayer' %}></script>
+</div>		
+</body>
+</html>
