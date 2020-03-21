@@ -5,101 +5,20 @@
 	<meta charset="utf-8">
 	<title>乐乐直播</title>
 	<link href="{% static 'css/video-js.min.css' %}" rel="stylesheet">
-	<style>
-*{
-	margin:0;
-	padding: 0;
-}
-body {
-	background-color: #333333;
-	/*background-color: #fff;*/
-}
-header{
-	background-color: #191919;
-	width:100%;
-	height:80px;
-}
-.logo{
-	width:500px;
-	height:100%;
-	line-height: 70px;
-	position: relative;
-	margin-left: 90px;
-}
-.logo .main-logo{
-	width:140px;
-	display: inline-block;
-	position: absolute;
-	top:50%;
-	margin-top: -22.5px;
-
-}
-.sub-logo{
-	display: inline-block;
-	position: absolute;
-	left:160px;
-	width: 100px;
-	top:50%;
-	margin-top: -15.18px;
-}
-.main{
-	position: relative;
-	margin-top: 30px;
-}
-.m {
-	width: 960px;
-	height: 600px;
-	margin-left: 100px;
-	margin-right: auto;
-	float: left;
-}
-.aside{
-	float: right;
-	width:300px;
-	height:600px;
-	background-color: #191919;
-	margin-right:100px;
-}
-
-.channel-box h1{
-	display: block;
-	color: #fff;
-	font-weight: bolder;
-	font-size: 18px;
-	display: block;
-	margin-top: 10px;
-	text-align: center;
-}
-.channel{
-	display: inline-block;
-	width:300px;
-	height:30px;
-	line-height: 30px;
-	background-color: rgba(51,51,51,0.5);
-	border-radius: 3px;
-	text-align: center;
-	margin-top: 5px;
-	color: #fff;
-}
-.channel:hover{
-	cursor: pointer;
-	background-color: rgba(204,0,51,0.5);
-	color: #fff;
-}
-</style>
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
 	</head>
  
 	<body>
 	<header>
 		<div class="logo">
-			<img src="http://ic.cust.edu.cn/images/logo.png" class="main-logo"/>
-			<img src={% static "img/cctv.png"%} class="sub-logo"/>
+			<img src={% static "img/logo.png"%} class="main-logo"/>
+{#			<img src={% static "img/cctv.png"%} class="sub-logo"/>#}
 		</div>
 	</header>
 	<div class="main"> 
     <div class="m">
       <video id="my-video" class="video-js" controls preload="auto" width="960" height="600"
-		  poster="http://ic.cust.edu.cn/images/logo.png" 
+		  poster="{% static "img/logo.png"%}"
 		  data-setup="{}">
         <source src="http://live-wcloud-cdn.ysp.cctv.cn/tlivecloud-cdn.ysp.cctv.cn/001/2000204603.m3u8" type="application/x-mpegURL">
       </video>
@@ -203,14 +122,20 @@ header{
     	</div>
     </aside>
 	</div>
+    <div class="switch-box">
+        {% for category in categorys %}
+        <div class="switch-item"><a href="{% url 'index' category.id %}">{{ category.name }}</a></div>
+        {% endfor %}
+    </div>
 </body>
 <script src="{% static 'css/video-js.min.css' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
 <script type="text/javascript">
-            var myPlayer = videojs('my-video');
-			    videojs("my-video").ready(function(){
-				    var myPlayer = this;
-				    myPlayer.play();
-			});
+    var myPlayer = videojs('my-video');
+    videojs("my-video").ready(function(){
+        var myPlayer = this;
+        myPlayer.play();
+    });
     var channels_js = []
         {% for channel in channels %}
             channel_id = {{ channel.id }};

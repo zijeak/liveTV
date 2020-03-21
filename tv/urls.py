@@ -3,6 +3,5 @@ from django.contrib import admin
 from tv import views
 
 urlpatterns = [
-    url(r'live$', views.live),
-    url(r'index$', views.index),
+    url(r'index/(?P<id>\d*)$', views.index,name="index"),
 ]
