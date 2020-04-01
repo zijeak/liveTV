@@ -25,7 +25,7 @@ header{
 	display: inline-block;
 	position: absolute;
 	top:50%;
-	margin-top: -22.5px;
+	margin-top: -30.5px;
 
 }
 .sub-logo{
@@ -42,7 +42,7 @@ header{
 }
 .m {
 	width: 960px;
-	height: 600px;
+	height: 650px;
 	margin-left: 100px;
 	margin-right: auto;
 	float: left;
@@ -50,7 +50,7 @@ header{
 .aside{
 	float: right;
 	width:300px;
-	height:600px;
+	height:650px;
 	background-color: #191919;
 	margin-right:100px;
 }
@@ -87,32 +87,70 @@ header{
 
 .switch-box {
 	width: 960px;
-	height: 100px;
+	height: auto;
 	margin-left: 100px;
 	margin-right: auto;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 
 	float: left;
 }
 .switch-item{
     width:200px;
     height:50px;
-	margin-right: 20px;
+	margin-right: 10px;
+	margin-bottom: 10px;
     line-height: 50px;
     text-align: center;
 	font-size: 18px;
 	font-weight: bold;
 	display: inline-block;
 	color: white;
+	border-radius: 6px;
+	transition: 0.6s;
 	/*background-image: url('/static/img/tv.png');*/
-	background-color: #191919;
+}
+.switch-item:nth-child(n){
+	background-size: 200%;
+	background-image: linear-gradient(to left,#EA2027,#B53471,#EA2027);
+}
+.switch-item:nth-child(2n){
+	background-size: 200%;
+	background-image: linear-gradient(to left,#FFC312,#EE5A24,#FFC312);
+}
+.switch-item:nth-child(3n){
+	background-size: 200%;
+	background-image: linear-gradient(to left,#12CBC4,#0652DD,#12CBC4);
+}
+.switch-item:nth-child(3n+1){
+	background-size: 200%;
+	background-image: linear-gradient(to left,#12CBC4,#009432,#12CBC4);
 }
 .switch-item:hover{
-    border: 2px orange solid;
 	cursor: pointer;
+	background-position: right;
 }
 .switch-item a{
 	text-decoration: none;
 	color: #fff;
 }
+.notice{
+	border:none;
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom: 10px;
+	padding: 10px;
+	width:960px;
+	border-radius: 6px;
+	cursor: pointer;
+	color: white;
+	font-size: 15px;
+	background-size: 200%;
+	background-image: linear-gradient(to left,#12CBC4,#0652DD,#12CBC4);
+	transition: 1s;
+}
+.notice:hover{
+	font-size: 18px;
+	background-position: right;
+}
+
