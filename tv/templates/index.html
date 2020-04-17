@@ -11,13 +11,13 @@
 	<body>
 	<header>
 		<div class="logo">
-			<img src={% static "img/logo.png"%} class="main-logo"/>
+			<a href="/"><img src={% static "img/logo.png"%} class="main-logo"/></a>
 {#			<img src={% static "img/cctv.png"%} class="sub-logo"/>#}
 		</div>
 	</header>
 	<div class="main"> 
     <div class="m">
-        <button class="notice">提示：部分频道无法播放时请使用Safari或非谷歌内核Edge浏览器</button>
+        <button class="notice">{{ notice.content }}</button>
       <video id="my-video" class="video-js" controls preload="auto" width="960" height="600"
 		  poster="{% static "https://s1.ax1x.com/2020/04/01/G3hf4x.jpg"%}"
 		  data-setup="{}">

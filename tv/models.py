@@ -13,3 +13,11 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Notice(models.Model):
+    title = models.CharField(max_length=200, verbose_name='通知标题', null=False)
+    content = models.CharField(max_length=200,verbose_name='通知内容',null = True)
+
+    def __str__(self):
+        return self.title;
